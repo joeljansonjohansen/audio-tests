@@ -13,7 +13,17 @@ function draw() {
 	//background(220);
 }
 
-// Disable scrolling.
-document.ontouchmove = function (e) {
-	e.preventDefault();
-};
+var canvas_dom = document.getElementsByTagName("canvas");
+canvas_dom.addEventListener("touchstart", function (event) {
+	// make this your canvas DOM element
+	event.preventDefault();
+});
+canvas_dom.addEventListener("touchmove", function (event) {
+	event.preventDefault();
+});
+canvas_dom.addEventListener("touchend", function (event) {
+	event.preventDefault();
+});
+canvas_dom.addEventListener("touchcancel", function (event) {
+	event.preventDefault();
+});
