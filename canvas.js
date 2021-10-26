@@ -15,7 +15,7 @@ function setup() {
 }
 
 function draw() {
-	background(255, 204, 0);
+	background(255, 204, 100);
 	if (curX < width) {
 		curX += 1;
 	} else if (curX > 0) {
