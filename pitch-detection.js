@@ -9,6 +9,13 @@ Basic Pitch Detection
 === */
 
 let pitch;
+const ampEnv = new Tone.AmplitudeEnvelope({
+	attack: 0.1,
+	decay: 0.2,
+	sustain: 1.0,
+	release: 0.8,
+}).toDestination();
+let osc = new Tone.Oscillator(200, "sine").connect(ampEnv).start();
 
 async function setup() {
 	// audioContext = new AudioContext();
@@ -28,7 +35,7 @@ async function setup() {
 		})
 		.catch((e) => {
 			// promise is rejected when the user doesn't have or allow mic access
-			console.log("mic not open");
+			console.log("mic not open", e);
 		});
 }
 
@@ -41,12 +48,25 @@ function modelLoaded() {
 	getPitch();
 }
 
+let timeSinceStopped = 0;
+let wait = false;
+
 function getPitch() {
 	pitch.getPitch(function (err, frequency) {
 		if (frequency) {
 			document.querySelector("#result").textContent = frequency;
+			if (timeSinceStopped > 50 && !wait) {
+				osc.frequency.rampTo(frequency, 0.2);
+				// ampEnv.triggerAttackRelease("8n");
+				//wait = true;
+				ampEnv.triggerAttack("+0.1");
+			}
+			timeSinceStopped += 1;
 		} else {
+			ampEnv.triggerRelease("+0.1");
+			wait = false;
 			document.querySelector("#result").textContent = "No pitch detected";
+			timeSinceStopped = 0;
 		}
 		getPitch();
 	});
