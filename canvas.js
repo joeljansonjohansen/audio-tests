@@ -43,7 +43,7 @@ document.body.addEventListener(
 	"touchmove",
 	function (e) {
 		if (e.target == canvas) {
-			ellipse(e.pageX, e.pageY, 15, 15);
+			ellipse(0, 0, 15, 15);
 			e.preventDefault();
 		}
 	},
