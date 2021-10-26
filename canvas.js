@@ -17,14 +17,14 @@ function setup() {
 function draw() {
 	background(255, 204, 0);
 	if (curX < width) {
-		curX += 4;
+		curX += 1;
 	} else if (curX > 0) {
-		curX -= 4;
+		curX -= 1;
 	}
 	if (curY < height) {
-		curY += 4;
+		curY += 1;
 	} else if (curY > 0) {
-		curY -= 4;
+		curY -= 1;
 	}
 	ellipse(curX, curY, radius);
 }
