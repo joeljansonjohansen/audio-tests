@@ -1,7 +1,7 @@
 {
   "name": "Canvas",
-  "short_name": "CNVS",
+  "short_name": "CNVS2",
   "lang": "sv-SE",
   "start_url": "https://joeljansonjohansen.github.io/audio-tests/canvas.html",
-  "display": "fullscreen"
+  "display": "standalone"
 }
