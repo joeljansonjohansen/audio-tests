@@ -12,3 +12,8 @@ function setup() {
 function draw() {
 	//background(220);
 }
+
+// Disable scrolling.
+document.ontouchmove = function (e) {
+	e.preventDefault();
+};
