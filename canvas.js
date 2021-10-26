@@ -13,17 +13,31 @@ function draw() {
 	//background(220);
 }
 
-var canvas_dom = document.getElementsByTagName("canvas");
-canvas_dom.addEventListener("touchstart", function (event) {
-	// make this your canvas DOM element
-	event.preventDefault();
-});
-canvas_dom.addEventListener("touchmove", function (event) {
-	event.preventDefault();
-});
-canvas_dom.addEventListener("touchend", function (event) {
-	event.preventDefault();
-});
-canvas_dom.addEventListener("touchcancel", function (event) {
-	event.preventDefault();
-});
+// Prevent scrolling when touching the canvas
+document.body.addEventListener(
+	"touchstart",
+	function (e) {
+		if (e.target == canvas) {
+			e.preventDefault();
+		}
+	},
+	{ passive: false }
+);
+document.body.addEventListener(
+	"touchend",
+	function (e) {
+		if (e.target == canvas) {
+			e.preventDefault();
+		}
+	},
+	{ passive: false }
+);
+document.body.addEventListener(
+	"touchmove",
+	function (e) {
+		if (e.target == canvas) {
+			e.preventDefault();
+		}
+	},
+	{ passive: false }
+);
