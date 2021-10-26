@@ -10,7 +10,7 @@ function setup() {
 	console.log(height);
 	createCanvas(width, height);
 	// background(33);
-	background(255, 204, 0);
+	background(255, 204, 100);
 	ellipse(radius / 2, height - radius / 2, radius);
 }
 
