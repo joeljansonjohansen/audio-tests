@@ -4,7 +4,8 @@ function setup() {
 	console.log(width);
 	console.log(height);
 	createCanvas(width, height);
-	background(33);
+	// background(33);
+	background(255, 204, 0);
 	let radius = 100;
 	ellipse(radius / 2, height - radius / 2, radius);
 }
