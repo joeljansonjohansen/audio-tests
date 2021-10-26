@@ -13,8 +13,9 @@ function draw() {
 	//background(220);
 }
 
-function touchMoved() {
-	ellipse(mouseX, mouseY, 5, 5);
+function touchMoved(event) {
+	//console.log(event);
+	ellipse(event.clientX, event.clientY, 5, 5);
 	// prevent default
 	return false;
 }
