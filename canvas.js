@@ -12,7 +12,7 @@ function setup() {
 }
 
 function drawScene() {
-	background(25, 24, 100);
+	background(25, 104, 100);
 	ellipse(radius / 2, height - radius / 2, radius);
 }
 
