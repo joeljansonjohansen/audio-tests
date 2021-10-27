@@ -3,19 +3,23 @@ let curY = 0;
 let radius = 100;
 
 function setup() {
+	let height = document.documentElement.clientHeight;
+	let width = document.documentElement.clientWidth;
 	console.log(width);
 	console.log(height);
-	createCanvas(windowWidth, windowHeight);
+	createCanvas(width, height);
 	drawScene();
 }
 
 function drawScene() {
-	background(255, 204, 100);
+	background(25, 204, 100);
 	ellipse(radius / 2, height - radius / 2, radius);
 }
 
 function windowResized() {
-	resizeCanvas(windowWidth, windowHeight);
+	let height = document.documentElement.clientHeight;
+	let width = document.documentElement.clientWidth;
+	resizeCanvas(width, height);
 	drawScene();
 }
 
