@@ -12,13 +12,13 @@ function setup() {
 }
 
 function drawScene() {
-	background(25, 104, 10);
+	background(25, 104, 120);
 	ellipse(radius / 2, height - radius / 2, radius);
 }
 
 function windowResized() {
-	let height = document.documentElement.clientHeight;
-	let width = document.documentElement.clientWidth;
+	let height = screen.height;
+	let width = screen.width;
 	resizeCanvas(width, height);
 	drawScene();
 }
