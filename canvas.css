@@ -16,7 +16,7 @@ body {
 
 @keyframes changeColor {
 	from {
-		background-color: rgb(157, 190, 190);
+		background-color: rgb(40, 110, 52);
 	}
 	to {
 		background-color: rgb(170, 32, 89);
