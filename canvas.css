@@ -10,23 +10,15 @@ main {
 body {
 	background-color: rgb(157, 190, 190);
 	animation-duration: 15s;
+	animation-iteration-count: infinite;
 	animation-name: changeColor;
 }
 
 @keyframes changeColor {
-	20% {
+	from {
 		background-color: rgb(157, 190, 190);
 	}
-	30% {
+	to {
 		background-color: rgb(170, 32, 89);
-	}
-	40% {
-		background-color: rgb(23, 75, 59);
-	}
-	50% {
-		background-color: rgb(206, 168, 0);
-	}
-	100% {
-		background-color: rgb(157, 190, 190);
 	}
 }
