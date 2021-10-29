@@ -17,8 +17,8 @@ function drawScene() {
 }
 
 function windowResized() {
-	let height = screen.height;
-	let width = screen.width;
+	let height = document.documentElement.clientHeight;
+	let width = document.documentElement.clientWidth;
 	resizeCanvas(width, height);
 	drawScene();
 }
